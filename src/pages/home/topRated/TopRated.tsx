@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import ContentWrapper from '../../../components/contentWrapper/ContentWrapper'
 import SwitchTabs from '../../../components/switchTabs/SwitchTabs'
 import useFetch from '../../../hooks/useFetch';
@@ -8,7 +8,7 @@ const TopRated = () => {
   const [endpoint, setEndpoint] = useState('movie');
   const { data, loading } = useFetch(`/${endpoint}/top_rated`);
   
-  const handleTabChange = (tab: any, index: any) => {
+  const handleTabChange = (tab: any) => {
     setEndpoint(tab === 'Movies' ? 'movie' : 'tv');
   }
 
